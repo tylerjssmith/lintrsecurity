@@ -1,9 +1,11 @@
 Package: lintrsecurity
-Title: What the Package Does (One Line, Title Case)
+Title: Check R Code for Malicious or Vulnerable Patterns using lintr
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Tyler", "Smith", , "tylerjssmith@gmail.com", role = c("aut", "cre"))
+Description: lintrsecurity provides security-related linters for use with the
+    lintr package. These may be used to check R code for malicious or vulnerable
+    patterns.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
