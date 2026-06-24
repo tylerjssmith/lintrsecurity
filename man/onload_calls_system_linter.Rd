@@ -2,12 +2,12 @@
 % Please edit documentation in R/linters.R
 \name{onload_calls_system_linter}
 \alias{onload_calls_system_linter}
-\title{Flag system() calls inside lifecycle hooks
+\title{Flag system() calls inside .onLoad hooks
 ...}
 \usage{
 onload_calls_system_linter()
 }
 \description{
-Flag system() calls inside lifecycle hooks
+Flag system() calls inside .onLoad hooks
 ...
 }

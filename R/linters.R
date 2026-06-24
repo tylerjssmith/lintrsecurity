@@ -1,4 +1,4 @@
-#' Flag system() calls inside lifecycle hooks
+#' Flag system() calls inside .onLoad hooks
 #' ...
 #' @export
 onload_calls_system_linter <- function() {
@@ -9,10 +9,10 @@ onload_calls_system_linter <- function() {
   )
 }
 
-#' Flag network calls inside lifecycle hooks
+#' Flag httr::POST calls inside .onLoad hooks
 #' ...
 #' @export
-onload_calls_download_linter <- function() {
+onload_calls_httr_POST_linter <- function() {
   lintr::make_linter_from_xpath(
     xpath        = "...",
     lint_message = "...",
@@ -29,7 +29,7 @@ onload_calls_download_linter <- function() {
 #' @export
 lintrsecurity_linters <- function() {
   list(
-    onload_calls_system_linter   = onload_calls_system_linter(),
-    onload_calls_download_linter = onload_calls_download_linter()
+    onload_calls_system_linter    = onload_calls_system_linter(),
+    onload_calls_httr_POST_linter = onload_calls_httr_POST_linter()
   )
 }
