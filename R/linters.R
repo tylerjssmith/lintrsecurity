@@ -3,8 +3,8 @@
 #' @export
 onload_calls_system_linter <- function() {
   lintr::make_linter_from_xpath(
-    xpath   = "...",
-    message = "..."
+    xpath   = "foo",
+    message = "foo"
   )
 }
 
@@ -13,8 +13,8 @@ onload_calls_system_linter <- function() {
 #' @export
 onload_calls_download_linter <- function() {
   lintr::make_linter_from_xpath(
-    xpath   = "...",
-    message = "..."
+    xpath   = "foo",
+    message = "foo"
   )
 }
 
