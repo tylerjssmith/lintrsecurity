@@ -3,8 +3,9 @@
 #' @export
 onload_calls_system_linter <- function() {
   lintr::make_linter_from_xpath(
-    xpath   = "foo",
-    message = "foo"
+    xpath        = "...",
+    lint_message = "...",
+    type         = "warning"
   )
 }
 
@@ -13,8 +14,9 @@ onload_calls_system_linter <- function() {
 #' @export
 onload_calls_download_linter <- function() {
   lintr::make_linter_from_xpath(
-    xpath   = "foo",
-    message = "foo"
+    xpath        = "...",
+    lint_message = "...",
+    type         = "warning"
   )
 }
 
@@ -27,7 +29,7 @@ onload_calls_download_linter <- function() {
 #' @export
 lintrsecurity_linters <- function() {
   list(
-    system_in_onload_linter   = onload_calls_system_linter(),
-    download_in_onload_linter = onload_calls_download_linter()
+    onload_calls_system_linter   = onload_calls_system_linter(),
+    onload_calls_download_linter = onload_calls_download_linter()
   )
 }
