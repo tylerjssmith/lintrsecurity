@@ -17,3 +17,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Imports: 
     lintr (>= 3.3.0.1)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
