@@ -16,4 +16,4 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Imports: 
-    lintr
+    lintr (>= 3.3.0.1)
