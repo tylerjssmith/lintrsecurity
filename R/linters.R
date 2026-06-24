@@ -1,7 +1,7 @@
 #' Flag system() calls inside lifecycle hooks
 #' ...
 #' @export
-system_in_onload_linter <- function() {
+onload_calls_system_linter <- function() {
   lintr::make_linter_from_xpath(
     xpath   = "...",
     message = "..."
@@ -11,7 +11,7 @@ system_in_onload_linter <- function() {
 #' Flag network calls inside lifecycle hooks
 #' ...
 #' @export
-download_in_onload_linter <- function() {
+onload_calls_download_linter <- function() {
   lintr::make_linter_from_xpath(
     xpath   = "...",
     message = "..."
@@ -27,7 +27,7 @@ download_in_onload_linter <- function() {
 #' @export
 lintrsecurity_linters <- function() {
   list(
-    system_in_onload_linter   = system_in_onload_linter(),
-    download_in_onload_linter = download_in_onload_linter()
+    system_in_onload_linter   = onload_calls_system_linter(),
+    download_in_onload_linter = onload_calls_download_linter()
   )
 }
