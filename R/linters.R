@@ -12,6 +12,8 @@
 #' \href{https://attack.mitre.org/techniques/T1059/001/}{T1059.001 (PowerShell on Windows)}
 #' and \href{https://attack.mitre.org/techniques/T1059/004/}{T1059.004 (Unix Shell)}.
 #'
+#' @return A linter function of class \code{linter}.
+#'
 #' @export
 onload_calls_system_linter <- function() {
   lintr::make_linter_from_xpath(
@@ -45,6 +47,8 @@ onload_calls_system_linter <- function() {
 #' they can send the contents of the `~/.ssh` directory to an attacker. See
 #' MITRE ATT&CK
 #' \href{https://attack.mitre.org/techniques/T1552/001/}{MITRE ATT&CK T1552 (Unsecured Credentials: Credentials In Files)}.
+#'
+#' @return A linter function of class \code{linter}.
 #'
 #' @export
 onload_calls_httr_POST_linter <- function() {
