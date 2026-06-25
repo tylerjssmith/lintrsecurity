@@ -1,3 +1,5 @@
 ^lintrsecurity\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^\.Rhistory$
+^\.DS_Store$
