@@ -1,6 +1,6 @@
 # lintrsecurity
 
-`lintrsecurity` provides linters for use with the [`lintr`](https://lintr.r-lib.org/) package to detect security-relevant patterns in R source code. The package is intended to support secure R package development and supply chain security research.
+`lintrsecurity` provides [linters](https://en.wikipedia.org/wiki/Lint_(software)) for use with the [`lintr`](https://lintr.r-lib.org/) package to detect security-relevant patterns in R source code. The package is intended to support secure R package development and supply chain security research.
 
 ## Background
 
@@ -14,18 +14,13 @@ pak::pak('tylerjssmith/lintrsecurity')
 
 ## Usage
 
-The security-focused linters are used in `lintr` calls. See `lintr` [vignette](https://lintr.r-lib.org/articles/lintr.html) for an overview. As a simple example, `lintrsecurity` linters may be combined with existing linters and used to scan a script as follows.
+The security-focused linters are used in `lintr` calls. See `lintr` [vignette](https://lintr.r-lib.org/articles/lintr.html) for an overview. A script may be scanned as follows:
 
 ``` r
 library(lintr)
 library(lintrsecurity)
 
-linters <- c(
-  lintr::linters_with_defaults(),
-  lintrsecurity::lintrsecurity_linters()
-)
-
-dangerous_code = '
+malicious = '
 .onLoad <- function(libname, pkgname) {
   tryCatch({
     key <- readLines("~/.ssh/id_rsa")
@@ -35,7 +30,7 @@ dangerous_code = '
 }
 '
 
-lintr::lint(insecure_code, linters = linters)
+lintr::lint(malicious, linters = lintrsecurity::lintrsecurity_linters())
 ```
 
 
