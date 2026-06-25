@@ -37,7 +37,9 @@ test_that("onload_calls_httr_POST_linter returns no lint for calls outside of ho
   httr::POST()
   '
   code2 = '
-  httr::POST()
+  other_function(
+    httr::POST()
+  )
   '
   expect_no_lint(code1, lintrsecurity::onload_calls_httr_POST_linter())
   expect_no_lint(code2, lintrsecurity::onload_calls_httr_POST_linter())
