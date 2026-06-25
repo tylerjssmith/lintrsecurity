@@ -2,12 +2,20 @@
 % Please edit documentation in R/linters.R
 \name{onload_calls_system_linter}
 \alias{onload_calls_system_linter}
-\title{Flag system() calls inside .onLoad hooks
-...}
+\title{Flag system call inside .onLoad or .onAttach hook}
 \usage{
 onload_calls_system_linter()
 }
 \description{
-Flag system() calls inside .onLoad hooks
-...
+\code{system()} or \code{system2()} calls inside \code{.onLoad} or \code{.onAttach} hooks (often
+found in \code{R/zzz.R}) execute arbitrary shell commands whenever a package is
+loaded (e.g., via \code{library()}) or attached to the R search path.
+}
+\details{
+Shell commands may be used to control every aspect of a system up to
+the privileges of the user running R. For example, they can download and run
+malicious code, or exfiltrate credentials and other data. You should ensure
+you understand what shell command is being executed and why. See MITRE ATT&CK
+\href{https://attack.mitre.org/techniques/T1059/001/}{T1059.001 (PowerShell on Windows)}
+and \href{https://attack.mitre.org/techniques/T1059/004/}{T1059.004 (Unix Shell)}.
 }

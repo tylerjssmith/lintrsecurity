@@ -2,12 +2,18 @@
 % Please edit documentation in R/linters.R
 \name{onload_calls_httr_POST_linter}
 \alias{onload_calls_httr_POST_linter}
-\title{Flag httr::POST calls inside .onLoad hooks
-...}
+\title{Flag httr::POST() call inside .onLoad or .onAttach hook}
 \usage{
 onload_calls_httr_POST_linter()
 }
 \description{
-Flag httr::POST calls inside .onLoad hooks
-...
+\code{httr::POST()} calls inside \code{.onLoad} or \code{.onAttach} make HTTP POST requests,
+sending data to an external system whenever a package is loaded (e.g., via
+\code{library()}) or attached to the R search path.
+}
+\details{
+HTTP POST requests may be used to send data to external systems. For example,
+they can send the contents of the \verb{~/.ssh} directory to an attacker. See
+MITRE ATT&CK
+\href{https://attack.mitre.org/techniques/T1552/001/}{MITRE ATT&CK T1552 (Unsecured Credentials: Credentials In Files)}.
 }
