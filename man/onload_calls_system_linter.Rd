@@ -6,6 +6,9 @@
 \usage{
 onload_calls_system_linter()
 }
+\value{
+A linter function of class \code{linter}.
+}
 \description{
 \code{system()} or \code{system2()} calls inside \code{.onLoad} or \code{.onAttach} hooks (often
 found in \code{R/zzz.R}) execute arbitrary shell commands whenever a package is
@@ -18,4 +21,13 @@ malicious code, or exfiltrate credentials and other data. You should ensure
 you understand what shell command is being executed and why. See MITRE ATT&CK
 \href{https://attack.mitre.org/techniques/T1059/001/}{T1059.001 (PowerShell on Windows)}
 and \href{https://attack.mitre.org/techniques/T1059/004/}{T1059.004 (Unix Shell)}.
+}
+\examples{
+\dontrun{
+lintr::lint(
+  text = '.onLoad <- function(libname, pkgname) { system("id") }',
+  linters = onload_calls_system_linter()
+)
+}
+
 }

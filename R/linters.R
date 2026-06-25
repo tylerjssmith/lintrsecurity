@@ -14,6 +14,14 @@
 #'
 #' @return A linter function of class \code{linter}.
 #'
+#' @examples
+#' \dontrun{
+#' lintr::lint(
+#'   text = '.onLoad <- function(libname, pkgname) { system("id") }',
+#'   linters = onload_calls_system_linter()
+#' )
+#' }
+#'
 #' @export
 onload_calls_system_linter <- function() {
   lintr::make_linter_from_xpath(
@@ -49,6 +57,14 @@ onload_calls_system_linter <- function() {
 #' \href{https://attack.mitre.org/techniques/T1552/001/}{MITRE ATT&CK T1552 (Unsecured Credentials: Credentials In Files)}.
 #'
 #' @return A linter function of class \code{linter}.
+#'
+#' @examples
+#' \dontrun{
+#' lintr::lint(
+#'   text = '.onLoad <- function(libname, pkgname) { httr::POST() }',
+#'   linters = onload_calls_httr_POST_linter()
+#' )
+#' }
 #'
 #' @export
 onload_calls_httr_POST_linter <- function() {

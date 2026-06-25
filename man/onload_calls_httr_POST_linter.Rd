@@ -6,6 +6,9 @@
 \usage{
 onload_calls_httr_POST_linter()
 }
+\value{
+A linter function of class \code{linter}.
+}
 \description{
 \code{httr::POST()} calls inside \code{.onLoad} or \code{.onAttach} make HTTP POST requests,
 sending data to an external system whenever a package is loaded (e.g., via
@@ -16,4 +19,13 @@ HTTP POST requests may be used to send data to external systems. For example,
 they can send the contents of the \verb{~/.ssh} directory to an attacker. See
 MITRE ATT&CK
 \href{https://attack.mitre.org/techniques/T1552/001/}{MITRE ATT&CK T1552 (Unsecured Credentials: Credentials In Files)}.
+}
+\examples{
+\dontrun{
+lintr::lint(
+  text = '.onLoad <- function(libname, pkgname) { httr::POST() }',
+  linters = onload_calls_httr_POST_linter()
+)
+}
+
 }
