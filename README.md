@@ -34,9 +34,11 @@ This code reads the user's SSH private key and sends it to an external server wh
 
 - **Security reviewers** auditing third-party packages before use in sensitive environments.
 
-Static analysis cannot detect all malicious code -- a determined attacker can obfuscate dangerous patterns beyond what any source-level tool can reliably identify. `lintrsecurity` is one layer of defense, not a complete solution. Its value is catching naive attacks, surfacing patterns that warrant manual review, and enabling systematic measurement of the R package ecosystem's attack surface.
-
 Findings are mapped to the [MITRE ATT&CK](https://attack.mitre.org/) framework, the standard vocabulary for describing adversarial behavior, to help security teams integrate `lintrsecurity` findings into their existing threat analysis workflows.
+
+### What `lintrsecurity` does not do
+
+Static analysis cannot detect all malicious code -- a determined attacker can obfuscate dangerous patterns beyond what any source-level tool can reliably identify. `lintrsecurity` is one layer of defense, not a complete solution. Its value is catching naive attacks, surfacing patterns that warrant manual review, and enabling systematic measurement of the R package ecosystem's attack surface.
 
 ## Installation
 
