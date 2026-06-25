@@ -75,7 +75,7 @@ onload_calls_httr_POST_linter <- function() {
 #' Returns all stable lintrsecurity linters as a named list suitable for
 #' passing to \code{lintr::lint()} or \code{lintr::lint_package()}.
 #'
-#' @return A named list of linter functions.
+#' @return A named list of linter objects.
 #' @export
 lintrsecurity_linters <- function() {
   list(

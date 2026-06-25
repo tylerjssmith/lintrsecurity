@@ -1,32 +1,44 @@
-test_that("onload_calls_httr_POST_linter returns no lint correctly", {
-  good1 = '
+test_that("onload_calls_httr_POST_linter returns no lint for non-httr::POST calls", {
+  code1 = '
   .onLoad <- function(libname, pkgname) {
     packageStartupMessage()
   }
   '
-  good2 = '
+  code2 = '
   .onAttach <- function(libname, pkgname) {
     packageStartupMessage()
   }
   '
-  expect_no_lint(good1, lintrsecurity::onload_calls_httr_POST_linter())
-  expect_no_lint(good2, lintrsecurity::onload_calls_httr_POST_linter())
+  expect_no_lint(code1, lintrsecurity::onload_calls_httr_POST_linter())
+  expect_no_lint(code2, lintrsecurity::onload_calls_httr_POST_linter())
 })
 
 
-test_that("onload_calls_httr_POST_linter returns lints correctly", {
-  bad1 = '
+test_that("onload_calls_httr_POST_linter returns lints for httr::POST calls in hooks", {
+  code1 = '
   .onLoad <- function(libname, pkgname) {
     httr::POST()
   }
   '
-  bad2 = '
+  code2 = '
   .onAttach <- function(libname, pkgname) {
     httr::POST()
   }
   '
-  expect_lint(bad1, "httr::POST\\(\\) calls inside \\.onLoad",
+  expect_lint(code1, "httr::POST\\(\\) calls inside \\.onLoad",
     lintrsecurity::onload_calls_httr_POST_linter())
-  expect_lint(bad2, "httr::POST\\(\\) calls inside \\.onLoad",
+  expect_lint(code2, "httr::POST\\(\\) calls inside \\.onLoad",
     lintrsecurity::onload_calls_httr_POST_linter())
+})
+
+
+test_that("onload_calls_httr_POST_linter returns no lint for calls outside of hooks", {
+  code1 = '
+  httr::POST()
+  '
+  code2 = '
+  httr::POST()
+  '
+  expect_no_lint(code1, lintrsecurity::onload_calls_httr_POST_linter())
+  expect_no_lint(code2, lintrsecurity::onload_calls_httr_POST_linter())
 })

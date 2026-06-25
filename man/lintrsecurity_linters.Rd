@@ -7,7 +7,7 @@
 lintrsecurity_linters()
 }
 \value{
-A named list of linter functions.
+A named list of linter objects.
 }
 \description{
 Returns all stable lintrsecurity linters as a named list suitable for

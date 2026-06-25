@@ -30,7 +30,7 @@ malicious = '
 }
 '
 
-lintr::lint(malicious, linters = lintrsecurity::lintrsecurity_linters())
+lintr::lint(text = malicious, linters = lintrsecurity::lintrsecurity_linters())
 ```
 
 
