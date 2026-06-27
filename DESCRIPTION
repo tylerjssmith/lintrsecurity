@@ -3,12 +3,8 @@ Title: Security-Focused Linters for R Code
 Version: 0.0.1
 Authors@R: 
     person("Tyler", "Smith", , "tylerjssmith@gmail.com", role = c("aut", "cre"))
-Description: Provides linters for use with the 'lintr' package to detect
-    security-relevant patterns in R source code. Targeted patterns include
-    dangerous constructs in package lifecycle hooks, calls to system execution
-    functions, and network calls that may exfiltrate data or fetch malicious
-    payloads. Intended to support secure R package development and supply
-    chain security research.
+Description: Provides security-focused linters for use with the 'lintr' package
+    to detect dangerous patterns in R source code.
 License: MIT + file LICENSE
 URL: https://github.com/tylerjssmith/lintrsecurity
 BugReports: https://github.com/tylerjssmith/lintrsecurity/issues
