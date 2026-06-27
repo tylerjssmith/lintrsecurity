@@ -10,7 +10,7 @@
 #'
 #' **Severity:** `warning`
 #'
-#' **MITRE ATT\&CK:** [T1041](https://attack.mitre.org/techniques/T1041/), [T1195.002](https://attack.mitre.org/techniques/T1195/002/)
+#' **MITRE ATT&CK:** [T1041](https://attack.mitre.org/techniques/T1041/), [T1195.002](https://attack.mitre.org/techniques/T1195/002/)
 #'
 #' For full documentation of the targeted vulnerability, see the [pkgaudit documentation](https://tylerjssmith.github.io/pkgaudit).
 #'

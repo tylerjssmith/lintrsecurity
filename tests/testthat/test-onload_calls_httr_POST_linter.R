@@ -25,9 +25,9 @@ test_that("onload_calls_httr_POST_linter returns lints for httr::POST calls in h
     httr::POST()
   }
   '
-  expect_lint(code1, "httr::POST\\(\\) calls inside \\.onLoad",
+  expect_lint(code1, "httr::POST\\(\\) inside \\.onLoad or \\.onAttach sends",
     lintrsecurity::onload_calls_httr_POST_linter())
-  expect_lint(code2, "httr::POST\\(\\) calls inside \\.onLoad",
+  expect_lint(code2, "httr::POST\\(\\) inside \\.onLoad or \\.onAttach sends",
     lintrsecurity::onload_calls_httr_POST_linter())
 })
 

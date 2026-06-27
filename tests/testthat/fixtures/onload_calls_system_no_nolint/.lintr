@@ -1,3 +1,0 @@
-# This file exists to test that audit_package() restores pre-existing
-# .lintr config files after auditing. Content is intentionally minimal.
-# Empty
