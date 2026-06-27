@@ -2,7 +2,9 @@
 
 lintrsecurity provides security-focused [linters](https://en.wikipedia.org/wiki/Lint_(software)) for use with the [lintr](https://lintr.r-lib.org/) package. The package is intended to support secure R package development. Importantly, because lintr respects `# nolint` exclusions, these linters should only be used on code you trust (to remove insecure patterns before sharing). For an alternative implementation that ignores `# nolint` exclusions, see [pkgaudit](https://github.com/tylerjssmith/lintrsecurity).
 
-## R is an attack surface
+## Background
+
+### R is an attack surface
 
 R packages are the primary mechanism for sharing R code. When you run `install.packages()` or `library()`, R executes code from the package automatically -- code you may never have read. This creates an attack surface: a malicious or compromised package can run arbitrary code on your system the moment you install or load it, without any action beyond your normal R workflow.
 
@@ -24,13 +26,13 @@ A minimal example of what a malicious `.onLoad` hook might look like is:
 
 This code reads the user's SSH private key and sends it to an external server whenever the package is loaded. The `tryCatch()` wrapper suppresses any errors, so the package loads normally and the user sees nothing unusual.
 
-## What lintrsecurity does
+### What lintrsecurity does
 
 lintrsecurity provides linters for use with the [lintr](https://lintr.r-lib.org/) package to detect patterns in R source code associated with these attack vectors. It is designed for R developers who want to ensure their own code does not contain insecure patterns before sharing it. 
 
 Findings are mapped to the [MITRE ATT&CK](https://attack.mitre.org/) framework, the standard vocabulary for describing adversarial behavior, to help security teams integrate lintrsecurity findings into their existing threat analysis workflows.
 
-## What lintrsecurity does not do
+### What lintrsecurity does not do
 
 These linters should only be used on code you trust. lintr was built to enforce code style guides, not to ensure security. It therefore will ignore code marked with `# nolint` comments. This is wholly appropriate for a style code but provides an obvious evasion technique for malicious actors. To scan code with the same rules while ignoring `# nolint` comments, see see [pkgaudit](https://github.com/tylerjssmith/lintrsecurity).
 
