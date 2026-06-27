@@ -1,6 +1,6 @@
 Package: lintrsecurity
 Title: Security-Focused Linters for R Code
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Tyler", "Smith", , "tylerjssmith@gmail.com", role = c("aut", "cre"))
 Description: Provides security-focused linters for use with the 'lintr' package
